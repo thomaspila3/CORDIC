@@ -1,11 +1,10 @@
-`include "defines.vh"
 // CORDIC unit, pipelined implementation
 // mode = 0:
 //      Provide an angle in radians*32768, provide enough clocks,
 //      and you get back the sin*32768 and cos*32768 of that angle.
 // mode = 1:
 //      Provide a value and get back the arctan of that value (in radians).
-
+`define NUM_BITS 17
 module tt_um_cordic_wrapper(
     input logic clk, rst, mode_toggle, out_toggle,
     // in_val: 1) vectoring mode: 2 5-bit x/y coordinates. 5 bit fraction
